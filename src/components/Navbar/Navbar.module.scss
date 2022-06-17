@@ -1,0 +1,57 @@
+// breakpoints
+$Mobile: 375px;
+$Desktop: 1440px;
+
+// Neutral
+
+$DarkBlue: hsl(209, 23%, 22%);
+$SemiDarkBlue: hsl(207, 26%, 17%);
+$VeryDarkBlue: hsl(200, 15%, 8%);
+$DarkGray: hsl(0, 0%, 52%);
+$VeryLightGray: hsl(0, 0%, 98%);
+$White: hsl(0, 0%, 100%);
+
+//// font size
+
+$HomepageItems: 14px;
+$DetailPage: 16px;
+
+.navbar {
+    background-color: var(--nav-bg);
+    transition: all .3s ease;
+    color: var(--text-primary);
+    box-shadow: 0 0 10px 1px $DarkGray;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 4rem;
+    }
+
+    .darkmode {
+        cursor: pointer;
+        padding: 1.5rem 1rem;
+        transition: background .3s ease;
+
+        &:hover {
+            background-color: var(--hover-btn);
+        }
+    }
+
+    @media(max-width: 500px) {
+        .container {
+            padding: 0 2rem;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+        }
+    }
+
+    @media(max-width: 410px) {
+        .container {
+            padding: 0 1rem;
+        }
+    }
+}

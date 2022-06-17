@@ -1,0 +1,47 @@
+.country {
+    background-color: var(--nav-bg);
+    border-radius: 5px;
+
+    &__img {
+        max-width: 290px;
+        max-height: 160px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            object-fit: cover;
+        }
+    }
+
+    &__details {
+        padding: 1rem;
+        padding-top: 0;
+
+        h3 {
+            color: var(--text-primary);
+            margin: 10px 0px;
+            max-width: 215px;
+        }
+
+        ul {
+            list-style: none;
+            font-size: 14px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        strong {
+            text-transform: capitalize;
+            color: var(--text-primary);
+        }
+
+        span {
+            color: var(--text-secondary);
+        }
+    }
+}

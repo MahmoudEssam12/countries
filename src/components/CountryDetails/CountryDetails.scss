@@ -1,0 +1,113 @@
+.country-wrapper {
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+.back-btn {
+    text-align: center;
+    padding: .5rem 1.8rem;
+    border: 1px solid rgb(42, 42, 42);
+    background-color: var(--nav-bg);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: background .3s ease;
+    border-radius: 6px;
+    box-shadow: 0 0 3px 1px hsl(208.6, 32.3%, 12.7%);
+    margin: 2rem 0 4rem;
+
+    i {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    &:hover {
+        background-color: var(--hover-btn);
+    }
+}
+
+.country-details {
+    display: flex;
+    justify-content: space-around;
+
+    .flag {
+        width: 500px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .info {
+        flex-grow: 1;
+        padding: 2rem 6rem;
+        color: var(--text-primary);
+
+        h1 {
+            margin-bottom: 1rem;
+
+        }
+
+        ul {
+            list-style: none;
+            display: grid;
+            gap: 10px;
+
+            @media (min-width:600px) {
+                grid-template-columns: repeat(2, 1fr);
+
+            }
+
+            span {
+                color: var(--text-secondary);
+            }
+        }
+
+        strong {
+            text-transform: capitalize;
+            display: inline-block;
+            margin-right: 6px;
+        }
+
+        .borders strong {
+            margin-right: 10px;
+        }
+
+        .border-country {
+            display: inline-block;
+            text-transform: capitalize;
+            display: inline-block;
+            margin-right: 5px;
+            text-align: center;
+            padding: 0.2rem 1.8rem;
+            border: 1px solid rgb(42, 42, 42);
+            background-color: var(--nav-bg);
+            color: var(--text-primary);
+            border-radius: 6px;
+            box-shadow: 0 0 3px 1px hsl(208.6, 32.3%, 12.7%);
+
+            i {
+                display: inline-block;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .borders {
+        margin-top: 2rem;
+    }
+
+    @media(max-width:1000px) {
+        flex-wrap: wrap;
+
+    }
+}
+
+@media(max-width: 700px) {
+    .country-wrapper .container {
+        padding: 2rem 0;
+    }
+
+    .country-details .info {
+        padding: 2rem 0;
+    }
+}

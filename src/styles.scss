@@ -1,0 +1,19 @@
+// breakpoints
+$Mobile: 375px;
+$Desktop: 1440px;
+
+// Neutral
+
+$DarkBlue: hsl(209, 23%, 22%);
+$SemiDarkBlue: hsl(207, 26%, 17%);
+$VeryDarkBlue: hsl(200, 15%, 8%);
+$DarkGray: hsl(0, 0%, 52%);
+$VeryLightGray: hsl(0, 0%, 98%);
+$White: hsl(0, 0%, 100%);
+
+//// font size
+
+$HomepageItems: 14px;
+$DetailPage: 16px;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap');

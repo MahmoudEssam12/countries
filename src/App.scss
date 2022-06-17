@@ -1,0 +1,121 @@
+// breakpoints
+$Mobile: 375px;
+$Desktop: 1440px;
+
+// Neutral
+
+$DarkBlue: hsl(209, 23%, 22%);
+$SemiDarkBlue: hsl(207, 26%, 17%);
+$VeryDarkBlue: hsl(200, 15%, 8%);
+$DarkGray: hsl(0, 0%, 52%);
+$VeryLightGray: hsl(0, 0%, 98%);
+$White: hsl(0, 0%, 100%);
+
+//// font size
+
+$HomepageItems: 14px;
+$DetailPage: 16px;
+
+.app {
+    transition: all .3s ease;
+}
+
+.countries {
+    min-height: 100vh;
+    margin-top: 2rem;
+
+    .container {
+        display: grid;
+        justify-items: baseline;
+        gap: 2rem 6rem;
+
+        @media(min-width: 1170px) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @media (max-width:1169px) {
+            grid-template-columns: repeat(3, 1fr);
+
+        }
+
+        @media (max-width:870px) {
+            grid-template-columns: repeat(2, 1fr);
+            justify-items: center;
+
+        }
+
+        @media (max-width:615px) {
+            grid-template-columns: repeat(1, 1fr);
+            justify-items: center;
+        }
+    }
+
+}
+
+.paginaiton {
+    max-width: 400px;
+    margin: auto;
+}
+
+.MuiPagination-root {
+    button {
+        color: var(--text-primary);
+    }
+
+    li div {
+        color: var(--text-primary) !important;
+
+    }
+}
+
+.MuiPaginationItem-icon {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.countries-filters {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 3rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    .search-bar {
+        background-color: var(--nav-bg);
+        color: var(--text-primary);
+        max-height: 50px;
+        margin: 0;
+    }
+
+    .search-input {
+        color: var(--text-primary);
+        height: 100%;
+        width: 100%;
+    }
+
+    .select-box {
+        background-color: var(--nav-bg);
+        color: var(--text-primary);
+
+        #select-region-label {
+            color: var(--text-primary);
+
+        }
+
+        #select-region {
+            background-color: var(--nav-bg);
+            color: var(--text-primary);
+            border-radius: 10px;
+        }
+
+        // [aria-labelledby="select-region-label"] {
+        //     background-color: var(--nav-bg);
+        //     color: var(--text-primary);
+        // }
+    }
+
+    .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon,
+    .css-bpeome-MuiSvgIcon-root-MuiSelect-icon {
+        color: var(--text-primary);
+    }
+}
