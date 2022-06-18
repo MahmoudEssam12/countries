@@ -4,13 +4,16 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-function SelectBox({ region, handleRegionChange, isDarkmode }) {
+import { useSelector } from "react-redux";
+
+function SelectBox({ region, handleRegionChange }) {
+  const mode = useSelector((state) => state.mode);
   return (
     <Box
       sx={{
         minWidth: 190,
         borderRadius: "5px",
-        borderColor: isDarkmode ? "hsl(0, 0%, 100%)" : "hsl(200, 15%, 8%)",
+        borderColor: mode ? "hsl(0, 0%, 100%)" : "hsl(200, 15%, 8%)",
         borderWidth: "1rem",
         "&::hover": {
           borderColor: "#fff",
@@ -31,7 +34,7 @@ function SelectBox({ region, handleRegionChange, isDarkmode }) {
           sx={{
             borderRadius: "5px",
             fontSize: "14px",
-            borderColor: isDarkmode ? "hsl(0, 0%, 100%)" : "hsl(200, 15%, 8%)",
+            borderColor: mode ? "hsl(0, 0%, 100%)" : "hsl(200, 15%, 8%)",
             borderWidth: "1rem",
             "&:hover": {
               borderColor: "#fff",

@@ -27,7 +27,7 @@ code {
   --text-secondary: hsl(0, 0%, 52%);
   --nav-bg: #fff;
   --hover-btn: hsl(0, 0%, 98%);
-
+  --shadows: hsl(0, 0%, 88.6%);
 }
 
 [data-theme='dark'] {
@@ -36,6 +36,7 @@ code {
   --text-secondary: hsl(0, 0%, 98%);
   --nav-bg: hsl(209, 23%, 22%);
   --hover-btn: hsl(200, 15%, 8%);
+  --shadows: hsl(0, 0%, 11%);
 }
 
 .app {

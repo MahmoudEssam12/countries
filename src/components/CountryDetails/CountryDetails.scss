@@ -12,7 +12,7 @@
     cursor: pointer;
     transition: background .3s ease;
     border-radius: 6px;
-    box-shadow: 0 0 3px 1px hsl(208.6, 32.3%, 12.7%);
+    box-shadow: 0 0 3px 1px var(--shadows);
     margin: 2rem 0 4rem;
 
     i {
@@ -83,17 +83,25 @@
             background-color: var(--nav-bg);
             color: var(--text-primary);
             border-radius: 6px;
-            box-shadow: 0 0 3px 1px hsl(208.6, 32.3%, 12.7%);
+            box-shadow: 0 0 3px 1px var(--shadows);
+            transition: all .3s ease;
 
             i {
                 display: inline-block;
                 margin-right: 10px;
+            }
+
+            &:hover {
+                background-color: var(--hover-btn);
             }
         }
     }
 
     .borders {
         margin-top: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
     }
 
     @media(max-width:1000px) {

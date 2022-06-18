@@ -10,7 +10,7 @@ $VeryDarkBlue: hsl(200, 15%, 8%);
 $DarkGray: hsl(0, 0%, 52%);
 $VeryLightGray: hsl(0, 0%, 98%);
 $White: hsl(0, 0%, 100%);
-
+$navbarShadow:hsl(0, 0%, 88.6%);
 //// font size
 
 $HomepageItems: 14px;
@@ -20,7 +20,7 @@ $DetailPage: 16px;
     background-color: var(--nav-bg);
     transition: all .3s ease;
     color: var(--text-primary);
-    box-shadow: 0 0 10px 1px $DarkGray;
+    box-shadow: 0 0 10px 1px var(--shadows);
 
     .container {
         display: flex;

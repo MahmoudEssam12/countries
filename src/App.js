@@ -1,36 +1,38 @@
 import React, { useState, useEffect, Suspense } from "react";
 import axios from 'axios';
 import Navbar from './components/Navbar/Navbar';
-
 import {
   BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
+import { useSelector } from "react-redux";
+import Loading from "./components/Loading/Loading";
 import './App.scss';
-import Countries from "./components/Countries/Countries";
+const Countries = React.lazy(() => import("./components/Countries/Countries"));
 const CountryDetails = React.lazy(() => import("./components/CountryDetails/CountryDetails"));
 
 function App() {
   const [countries, setCountries] = useState([]);
-  const [darkmode, setDarkmode] = useState(true);
   const [searchCountries, setSearchCountries] = useState([...countries])
   // const [searchInput, setSearchInput] = useState("");
   const [page, setPage] = useState(0);
   const [region, setRegion] = useState("");
+  const mode = useSelector(state => state.mode)
+  //preloader
+  const [loading, setLoading] = useState(true);
 
   const search = (countryName) => {
     setPage(0)
-    let filterdCountries = countries.filter(country => country.name.common.toLowerCase().includes(countryName))
+    let filterdCountries = countries.filter(country => country.name.common.toLowerCase().includes(countryName.toLowerCase()))
     setSearchCountries(filterdCountries)
-    console.log(searchCountries)
   }
   useEffect(() => {
     axios.get("https://restcountries.com/v3.1/all")
       .then(res => {
         let legalCountries = res.data.filter(country => country.name.common !== "Israel")
         setCountries(legalCountries)
-
+        setLoading(false)
       })
       .catch(err => console.log(err))
   }, [])
@@ -50,14 +52,15 @@ function App() {
   }, [region]);
 
   return (
-    <div className="app" data-theme={darkmode ? "dark" : "light"}>
-      <Navbar setDarkmode={setDarkmode} darkmode={darkmode} />
+    <div className="app" data-theme={mode}>
+      <Navbar />
+      {loading && <Loading />}
       <Router>
         <React.Fragment>
           <Routes>
             <Route path="/countryDetails/:countryName" exact
               element={
-                <Suspense fallback={<div>loading...</div>}>
+                <Suspense fallback={<Loading />}>
                   <CountryDetails
                     setSearchCountries={setSearchCountries}
                     countries={countries}
@@ -69,15 +72,16 @@ function App() {
             <Route
               path="/"
               element={
-                <Countries
-                  countries={searchCountries}
-                  setSearchInput={search}
-                  page={page}
-                  setPage={setPage}
-                  region={region}
-                  setRegion={setRegion}
-                  isDarkmode={darkmode}
-                />
+                <Suspense fallback={<Loading />}>
+                  <Countries
+                    countries={searchCountries}
+                    setSearchInput={search}
+                    page={page}
+                    setPage={setPage}
+                    region={region}
+                    setRegion={setRegion}
+                  />
+                </Suspense>
               } />
 
           </Routes>

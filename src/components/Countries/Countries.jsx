@@ -13,7 +13,6 @@ function Countries({
   page,
   region,
   setRegion,
-  isDarkmode,
 }) {
   const handleRegionChange = (e) => {
     setRegion(e.target.value);
@@ -28,11 +27,7 @@ function Countries({
             setSearchInput={setSearchInput}
             style={{ maxWidth: "350px" }}
           />
-          <SelectBox
-            region={region}
-            handleRegionChange={handleRegionChange}
-            isDarkmode={isDarkmode}
-          />
+          <SelectBox region={region} handleRegionChange={handleRegionChange} />
         </div>
         <div className="container">
           {countries.length > 0 ? (
@@ -68,7 +63,6 @@ function Countries({
         className="pagination"
         onChange={(e, page) => {
           setPage(page - 1);
-          console.log(page);
         }}
         style={{
           padding: "2rem 0",

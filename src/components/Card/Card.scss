@@ -1,6 +1,11 @@
 .country {
     background-color: var(--nav-bg);
     border-radius: 5px;
+    transition: all .3s ease;
+
+    a {
+        text-decoration: none;
+    }
 
     &__img {
         max-width: 290px;
@@ -19,6 +24,8 @@
     &__details {
         padding: 1rem;
         padding-top: 0;
+
+
 
         h3 {
             color: var(--text-primary);
@@ -43,5 +50,9 @@
         span {
             color: var(--text-secondary);
         }
+    }
+
+    &:hover {
+        box-shadow: 0 0 10px 1px var(--shadows);
     }
 }
